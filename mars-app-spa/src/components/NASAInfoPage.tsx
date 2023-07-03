@@ -9,14 +9,14 @@ interface NASAInfoPageParams {
 export function NASAInfoPage(props: NASAInfoPageParams) {
     document.title = props.title;
     return (
-        <div>
+        <div className="App-header">
+            <img src = {props.img}  className="App-logo"  alt="logo"/>
             <p style={{fontSize:20,textAlign:'justify', padding: 10}}>
                 { props.textP1 }
             </p>
             <p style={{fontSize:20,textAlign:'justify', padding: 10}}>
                 { props.textP2 }
             </p>
-            <img src = {props.img}   width={250} height={250} alt="logo"/>
         </div>
     );
 }

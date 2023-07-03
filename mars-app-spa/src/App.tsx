@@ -5,29 +5,32 @@ import {NASAInfoPage} from "./components/NASAInfoPage";
 import {MyButton} from "./components/MyButton";
 import NASA_logo from './images/NASA_logo.png'
 import {TreeCounter} from "./components/TreeCounter";
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <NASAInfoPage textP1 = "NASA stands for National Aeronautics and Space Administration. NASA is a U.S. government agency that is responsible for science and technology related to air and space. The Space Age started in 1957 with the launch of the Soviet satellite Sputnik."
-                      textP2 = "NASA opened for business on Oct. 1, 1958. The agency was created to oversee U.S. space exploration and aeronautics research."
-                      img = {NASA_logo}
-                      title="NASA INFO"
-        />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <MyButton />
-        <TreeCounter />
-      </header>
-    </div>
+      <Router>
+          <nav style={{ margin: 10 }}>
+              <Link to="/" style={{ padding: 5 }}>
+                  Home
+              </Link>
+              <Link to="/counter1" style={{ padding: 5 }}>
+                  Counter1
+              </Link>
+              <Link to="/counter2" style={{ padding: 5 }}>
+                  Counter2
+              </Link>
+          </nav>
+        <Routes>
+          <Route path="/" element={<NASAInfoPage textP1 = "NASA was established in 1958, succeeding the National Advisory Committee for Aeronautics (NACA), to give the U.S. space development effort a distinctly civilian orientation, emphasizing peaceful applications in space science. NASA has since led most American space exploration, including Project Mercury, Project Gemini, the 1968–1972 Apollo Moon landing missions, the Skylab space station, and the Space Shuttle. NASA supports the International Space Station and oversees the development of the Orion spacecraft and the Space Launch System for the crewed lunar Artemis program, Commercial Crew spacecraft, and the planned Lunar Gateway space station. The agency is also responsible for the Launch Services Program, which provides oversight of launch operations and countdown management for uncrewed NASA launches."
+                               textP2 = "NASA's science is focused on better understanding Earth through the Earth Observing System; advancing heliophysics through the efforts of the Science Mission Directorate's Heliophysics Research Program; exploring bodies throughout the Solar System with advanced robotic spacecraft such as New Horizons and planetary rovers such as Perseverance; and researching astrophysics topics, such as the Big Bang, through the James Webb Space Telescope, and the Great Observatories and associated programs."
+                               img = {NASA_logo}
+                               title="NASA INFO"
+                 />} />
+          <Route path="/counter1" element={<MyButton />} />
+          <Route path="/counter2" element={<TreeCounter />} />
+        </Routes>
+      </Router>
   );
 }
 

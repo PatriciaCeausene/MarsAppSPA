@@ -14,8 +14,10 @@ export function MyButton() {
     }
 
     return (
-        <button onClick={handleClick}>
-            You pressed me {count} times
-        </button>
+        <div className="App-header">
+            <button onClick={handleClick}>
+                You pressed me {count} times
+            </button>
+        </div>
     );
 }

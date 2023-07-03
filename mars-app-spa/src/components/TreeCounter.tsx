@@ -4,19 +4,21 @@ const Context = createContext(0);
 export function TreeCounter() {
     const [counter, setCounter] = useState(0);
     return (
-        <Context.Provider value={counter}>
-            <Component2 onClick = {() => {
-                setCounter(counter + 1);
-            }}/>
-            <Component3 />
-        </Context.Provider>
+        <div className="App-header">
+            <Context.Provider value={counter} >
+                <Component2 onClick = {() => {
+                    setCounter(counter + 1);
+                }}/>
+                <Component3 />
+            </Context.Provider>
+        </div>
     );
 }
 
 function Component2({onClick}: { onClick: any }) {
     return (
         <button onClick={onClick}>
-            Click here for counter 2.
+            Click here.
         </button>
     );
 }
