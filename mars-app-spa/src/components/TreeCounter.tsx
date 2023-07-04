@@ -26,7 +26,7 @@ function Component2({onClick}: { onClick: any }) {
 function Component3() {
     return (
         <>
-            <p style={{fontSize:20}}>Complex components tree - another type of  counter</p>
+            <p>Complex components tree - another type of  counter</p>
             <Component4 />
         </>
     );
@@ -36,7 +36,7 @@ function Component4() {
     const counter = useContext(Context);
     return (
         <>
-            <p style={{fontSize:20}}>Counter: {counter} </p>
+            <p>Counter: {counter} </p>
         </>
     );
 }

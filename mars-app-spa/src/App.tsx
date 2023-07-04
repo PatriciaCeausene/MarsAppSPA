@@ -6,6 +6,7 @@ import {MyButton} from "./components/MyButton";
 import NASA_logo from './images/NASA_logo.png'
 import {TreeCounter} from "./components/TreeCounter";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {Form} from "./components/Form";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
               <Link to="/counter2" style={{ padding: 5 }}>
                   Counter2
               </Link>
+              <Link to="/photos" style={{ padding: 5 }}>
+                  Photos
+              </Link>
           </nav>
         <Routes>
           <Route path="/" element={<NASAInfoPage textP1 = "NASA was established in 1958, succeeding the National Advisory Committee for Aeronautics (NACA), to give the U.S. space development effort a distinctly civilian orientation, emphasizing peaceful applications in space science. NASA has since led most American space exploration, including Project Mercury, Project Gemini, the 1968–1972 Apollo Moon landing missions, the Skylab space station, and the Space Shuttle. NASA supports the International Space Station and oversees the development of the Orion spacecraft and the Space Launch System for the crewed lunar Artemis program, Commercial Crew spacecraft, and the planned Lunar Gateway space station. The agency is also responsible for the Launch Services Program, which provides oversight of launch operations and countdown management for uncrewed NASA launches."
@@ -29,6 +33,7 @@ function App() {
                  />} />
           <Route path="/counter1" element={<MyButton />} />
           <Route path="/counter2" element={<TreeCounter />} />
+            <Route path="/photos" element={<Form />} />
         </Routes>
       </Router>
   );

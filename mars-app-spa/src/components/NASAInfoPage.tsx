@@ -11,10 +11,10 @@ export function NASAInfoPage(props: NASAInfoPageParams) {
     return (
         <div className="App-header">
             <img src = {props.img}  className="App-logo"  alt="logo"/>
-            <p style={{fontSize:20,textAlign:'justify', padding: 10}}>
+            <p>
                 { props.textP1 }
             </p>
-            <p style={{fontSize:20,textAlign:'justify', padding: 10}}>
+            <p>
                 { props.textP2 }
             </p>
         </div>
