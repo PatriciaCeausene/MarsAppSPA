@@ -38,13 +38,19 @@
 }
 
 .btn {
-  padding: 5px 10px;
+  margin: 5px;
   cursor: pointer;
-
 }
 
 .container {
   margin: auto;
   padding-top: 30px;
   width: 330px;
+}
+
+.gridBox {
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 900px;
 }

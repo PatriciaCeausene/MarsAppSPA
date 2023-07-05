@@ -3,7 +3,7 @@ interface ImageGroupParams {
 }
 
 export function ImageGroup(props: ImageGroupParams) {
-    console.log(props.images);
+    props.images.slice(0,5);
     return (
         <div>
             {

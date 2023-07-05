@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react'
 import Select, {SingleValue} from 'react-select'
 import {getAvailableCameras, getPhotosByRoverNameAndCameraType, getRoversNames} from "../requests/handleRequests";
 import {ImageGroup} from "./ImageGroup";
-
+import { useNavigate } from "react-router-dom";
 interface Option {
     value: string,
     label: string
 }
-export function Form() {
+export function RoverAndCameraForm() {
     const [roversList, setRoversList] = useState<string[]>([]);
     const [camerasList, setCamerasList] = useState<string[]>([]);
     const [rover, setRover] = useState<string>("");
@@ -15,6 +15,7 @@ export function Form() {
     const [isDisabled, setIsDisabled] = useState(true);
     const [imgList, setImgList] = useState<string[]>([]);
     const [showImg, setShowImg] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getRoversNames().then((roversList: string[]) => setRoversList(roversList));
@@ -66,6 +67,7 @@ export function Form() {
 
     return (
         <div className="container">
+            <h3>Select a rover and a camera.</h3>
             <Select
                 placeholder="Select rover"
                 options={roverOptions}

@@ -6,7 +6,9 @@ import {MyButton} from "./components/MyButton";
 import NASA_logo from './images/NASA_logo.png'
 import {TreeCounter} from "./components/TreeCounter";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-import {Form} from "./components/Form";
+import {RoverAndCameraForm} from "./components/RoverAndCameraForm";
+import {DatePicker} from "@mui/x-date-pickers";
+import RoverAndDateForm from "./components/RoverAndDateForm";
 
 function App() {
   return (
@@ -22,7 +24,10 @@ function App() {
                   Counter2
               </Link>
               <Link to="/photos" style={{ padding: 5 }}>
-                  Photos
+                  Photos by rover and camera
+              </Link>
+              <Link to="/datepicker" style={{ padding: 5 }}>
+                  Photos by rover and date
               </Link>
           </nav>
         <Routes>
@@ -33,7 +38,9 @@ function App() {
                  />} />
           <Route path="/counter1" element={<MyButton />} />
           <Route path="/counter2" element={<TreeCounter />} />
-            <Route path="/photos" element={<Form />} />
+            <Route path="/photos" element={<RoverAndCameraForm />} />
+            <Route path="/datepicker" element={<RoverAndDateForm/>} />
+
         </Routes>
       </Router>
   );

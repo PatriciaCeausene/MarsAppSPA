@@ -32,7 +32,20 @@ export async function getPhotosByRoverNameAndCameraType(roverName: string, camer
     try {
         const {data} = await axios({
             method: 'get',
-            url:`http://localhost:8000/rovers/${roverName}/photos/${cameraType}`,
+            url:`http://localhost:8000/rovers/${roverName}/photos/cameras/${cameraType}`,
+            responseType: "json"
+        });
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getPhotosByRoverNameAndEarthDate(roverName: string, earthDate: string) {
+    try {
+        const {data} = await axios({
+            method: 'get',
+            url:`http://localhost:8000/rovers/${roverName}/photos/${earthDate}`,
             responseType: "json"
         });
         return data;
